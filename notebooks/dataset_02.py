@@ -16,32 +16,32 @@ g.add_edges_from([
 
 draw_fn = nx.draw_kamada_kawai
 
-X_B_coeff = 2
-D_B_coeff = 3
-D_X_coeff = -7
-A_X_coeff = 1.25
-Y_D_coeff = 1
-Y_A_coeff = -1
-C_A_coeff = -1
+B_X_coeff = 2
+B_D_coeff = 3
+X_D_coeff = -7
+X_A_coeff = 1.25
+D_Y_coeff = 1
+A_Y_coeff = -1
+A_C_coeff = -1
 
 
 def B_value():
     return 5 * uniform(-1, 1)
 
 def X_value(b):
-    return X_B_coeff * b + gauss(1, 2)
+    return B_X_coeff * b + gauss(1, 2)
 
 def D_value(b, x):
-    return D_B_coeff * b +D_X_coeff * x + gauss(23, 0.25)
+    return B_D_coeff * b + X_D_coeff * x + gauss(23, 0.25)
 
 def A_value(x):
-    return A_X_coeff * x + gauss(1, 1)
+    return X_A_coeff * x + gauss(1, 1)
 
 def Y_value(d, a):
-    return Y_D_coeff * d + Y_A_coeff * a + gauss(9, 4)
+    return D_Y_coeff * d + A_Y_coeff * a + gauss(9, 4)
 
 def C_value(a):
-    return C_A_coeff * a + gauss(2, 2)
+    return A_C_coeff * a + gauss(2, 2)
 
 def observation():
     b = B_value()
