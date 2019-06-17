@@ -35,6 +35,8 @@ def is_collider_connection(g, nodeL, node0, nodeR):
     return {(nodeL, node0), (nodeR, node0)} <= set(g.in_edges(node0))
 
 def d_connections(g, node1, node2, given_vars):
+    raise NotImplemented()    # Needs to check that no descendants of a collider are in given_vars
+    
     connected_paths = []
     for path in find_all_paths(g, node1, node2):
         is_connected = True
