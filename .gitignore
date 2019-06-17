@@ -8,12 +8,5 @@
 .DS_Store
 .idea
 .ipynb_checkpoints
-data
 derby.log
 metastore_db
-output
-raw-data
-results
-securities
-training_data
-validation_data
