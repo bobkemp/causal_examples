@@ -20,7 +20,7 @@ g.add_edges_from([
     ("Z3",  "Y"),
 ])
 
-draw_fn = nx.draw_planar
+draw_fn = nx.draw_circular
 
 T1_X_coeff = 1
 W1_S_coeff = 3.2
@@ -65,7 +65,7 @@ def Y_value(w2, w3, z3):
     return W2_Y_coeff * w2 + W3_Y_coeff * w3 + Z3_Y_coeff * z3 + gauss(-2, 1)
 
 def S_value(w1, w2):
-    return 1 if (w1 + w2) > 5 else 0
+    return 1 if w1 > 1 and w2 > 4 else 0
 
 def observation():
     z1 = Z1_value()
